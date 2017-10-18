@@ -1,6 +1,6 @@
 #ifndef Logging_h
-  #define logging_h
- #include <Arduino.h>
+#define Logging_h
+#include <Arduino.h>
 typedef enum {_Verbose,_Debug, _Info, _Error} Log_en;
 class LoggingCs
 {
