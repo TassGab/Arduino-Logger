@@ -1,10 +1,10 @@
 #include "Logging_class.h"
+//#define debug
 LoggingCs::LoggingCs()
 {
   LogLevel=ZBLogLevel=_Verbose;
   AutoCR=false;
   ZBen=false;
-  
 }
 void LoggingCs::Verbose(String s)
 {
@@ -15,8 +15,10 @@ void LoggingCs::Verbose(String s)
   if((_Verbose>=Log.ZBLogLevel)&(Log.ZBen))
   {
     //ZBsend(s);
+	#ifdef debug
     Serial.print("ZB:");
     Serial.print(s);
+	#endif
     if(Log.AutoCR) Serial.println();
   }
 }
@@ -29,8 +31,10 @@ void LoggingCs::Debug(String s)
   if((_Debug>=Log.ZBLogLevel)&(Log.ZBen))
   {
     //ZBsend(s);
+	#ifdef debug
     Serial.print("ZB:");
     Serial.print(s);
+	#endif
     if(Log.AutoCR) Serial.println();
   }
 }
@@ -43,8 +47,10 @@ void LoggingCs::Info(String s)
   if((_Info>=Log.ZBLogLevel)&(Log.ZBen))
   {
     //ZBsend(s);
+	#ifdef debug
     Serial.print("ZB:");
     Serial.print(s);
+	#endif
     if(Log.AutoCR) Serial.println();
   }
 }
@@ -57,8 +63,10 @@ void LoggingCs::Error(String s)
   if((_Error>=Log.ZBLogLevel)&(Log.ZBen))
   {
     //ZBsend(s);
+	#ifdef debug
     Serial.print("ZB:");
     Serial.print(s);
+	#endif
     if(Log.AutoCR) Serial.println();
   }
 }
